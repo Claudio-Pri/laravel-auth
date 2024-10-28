@@ -1,6 +1,20 @@
 @extends('layouts.guest')
 
 @section('main-content')
+
+    @if($errors->any())
+        {{-- @dd($errors->all()); --}}
+        <div class="alert alert-danger mb-3">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        
+    @endif
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
