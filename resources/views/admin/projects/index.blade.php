@@ -39,6 +39,10 @@
                       @endforeach
                     </tbody>
                   </table>
+                  <div>
+                    <a href="{{ route('admin.projects.create') }}" class="btn btn-success">+ Crea nuovo progetto</a>
+
+                  </div>
             </div>
         </div>
     </div>

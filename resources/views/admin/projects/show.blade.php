@@ -18,13 +18,13 @@
                     Titolo: {{ $project->title }}
                   </li>
                   <li>
-                    Titolo: {{ $project->slug }}
+                    Slug: {{ $project->slug }}
                   </li>
                   <li>
-                    Titolo: {{ $project->url }}
+                    Link: {{ $project->url }}
                   </li>
                   <li>
-                    Titolo: {{ $project->description }}
+                    Descrizione: {{ $project->description }}
                   </li>
                 </ul>
             </div>
