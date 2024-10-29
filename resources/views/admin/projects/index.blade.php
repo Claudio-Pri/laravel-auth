@@ -33,7 +33,20 @@
                         <td>{{ $project->url }}</td>
                         <td>{{ $project->description }}</td>
                         <td>
-                            <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary">Vedi</a>
+                            <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-success w-100 my-1">Vedi</a>
+                            <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-outline-success w-100 my-1">Modifica</a>
+                            <form 
+                              {{-- doppia conferma cancellazione --}}
+                              onsubmit="return confirm('Sei sicuro di voler cancellare questo progetto?')"
+                              action="{{ route('admin.projects.destroy', ['project' => $project->id ]) }}" 
+                              method="POST" 
+                              class="d-inline-block w-100">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-outline-danger w-100 my-1">
+                                Emilina
+                              </button>
+                            </form>
                         </td>
                       </tr>
                       @endforeach
