@@ -16,4 +16,5 @@
             </div>
         </div>
     </div>
+    <a href="{{ route('admin.projects.index') }}">Vai all' index</a>
 @endsection

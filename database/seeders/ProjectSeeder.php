@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-//per slug
+//per slug da documentazione laravel
 use Illuminate\Support\Str;
 
 //Models
@@ -20,6 +20,7 @@ class ProjectSeeder extends Seeder
         Project::truncate();
         for ($i = 0; $i < 5; $i++) {
             $title = fake()->catchPhrase();
+            //slug da documentazione laravel
             $slug = Str::of($title)->slug('-');
             Project::create([
                 'title' => $title,
