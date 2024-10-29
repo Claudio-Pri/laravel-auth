@@ -21,6 +21,7 @@
                         <th scope="col">Slug</th>
                         <th scope="col">url</th>
                         <th scope="col">Descrizione</th>
+                        <th scope="col">Azioni</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,9 @@
                         <td>{{ $project->slug }}</td>
                         <td>{{ $project->url }}</td>
                         <td>{{ $project->description }}</td>
+                        <td>
+                            <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary">Vedi</a>
+                        </td>
                       </tr>
                       @endforeach
                     </tbody>
