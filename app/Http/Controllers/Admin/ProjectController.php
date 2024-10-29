@@ -38,7 +38,13 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        //validazione dati
+        $request->validate([
+            'title' => 'required|min:3|max:128',
+            'thumb' => 'nullable|url',
+            'description' => 'required|min:3|max:4096',
 
+        ]);
         $data = $request->all();
         // $slug = Str::of($data['title'])->slug('-');
         // $data['slug'] = $slug;
@@ -73,6 +79,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $request->validate([
+            'title' => 'required|min:3|max:128',
+            'thumb' => 'nullable|url',
+            'description' => 'required|min:3|max:4096',
+
+        ]);
         $data = $request->all();
         // $slug = Str::of($data['title'])->slug('-');
         // $data['slug'] = $slug;

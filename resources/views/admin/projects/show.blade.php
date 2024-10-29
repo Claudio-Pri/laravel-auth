@@ -27,6 +27,12 @@
                     Descrizione: {{ $project->description }}
                   </li>
                 </ul>
+                <div>
+                  <a href="{{ route('admin.projects.edit', ['project' => $project->id ]) }}" class="btn btn-outline-success">Modifica</a>
+                </div>
+                <div>
+                  <a href="{{ route('admin.projects.index') }}">Torna all'index</a>
+                </div>
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                  <label for="title" class="form-label">Titolo</label>
+                  <label for="title" class="form-label">Titolo <span class="text-danger">*</span></label>
                   <input
                     type="text"
                     class="form-control"
@@ -38,7 +38,7 @@
                     placeholder="Inserisci il link al progetto...">
                 </div>
                 <div class="mb-3">
-                  <label for="description" class="form-label">Descrizione</label>
+                  <label for="description" class="form-label">Descrizione <span class="text-danger">*</span></label>
                   <input 
                     type="text"
                     class="form-control"

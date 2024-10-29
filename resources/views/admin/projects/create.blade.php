@@ -16,7 +16,7 @@
               <form action="{{ route('admin.projects.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label for="title" class="form-label">Titolo</label>
+                  <label for="title" class="form-label">Titolo <span class="text-danger">*</span></label>
                   <input
                     type="text"
                     class="form-control"
@@ -35,17 +35,19 @@
                     placeholder="Inserisci il link al progetto...">
                 </div>
                 <div class="mb-3">
-                  <label for="description" class="form-label">Descrizione</label>
+                  <label for="description" class="form-label">Descrizione <span class="text-danger">*</span></label>
                   <textarea 
                     type="text"
                     class="form-control"
                     id="description"
                     name="description"
+                    required
                     placeholder="Inserisci la descrizione..."></textarea>
                 </div>
                 
                 <button type="submit" class="btn btn-success">+ Aggiungi</button>
               </form> 
+              <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary">Annulla</a>
             </div>
         </div>
     </div>
