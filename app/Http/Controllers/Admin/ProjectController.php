@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+//per slug da documentazione laravel
+// use Illuminate\Support\Str;
 
 //Models
 use App\Models\Project;
@@ -36,6 +38,16 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+
+        $data = $request->all();
+        // $slug = Str::of($data['title'])->slug('-');
+        // $data['slug'] = $slug;
+        $data['slug'] = str()->slug($data['title']);
+
+        // dd($data);
+
+        $project = Project::create($data);
+        return redirect()->route('admin.projects.show', ['project' => $project->id]);
     }
 
     /**
