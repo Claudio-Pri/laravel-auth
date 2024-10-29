@@ -1,5 +1,7 @@
 @extends('layouts.guest')
 
+@section('page-title', 'Home')
+
 @section('main-content')
     <div class="row">
         <div class="col">
